@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.8;
+  text-align: center;
+  direction: rtl;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #d32f2f;
+}
+
+header p {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.books-list {
+  list-style: none;
+  text-align: center;
+}
+
+.books-list li {
+  margin: 15px 0;
+}
+
+.books-list a {
+  display: block;
+  padding: 15px 25px;
+  background-color: #d32f2f;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+}
+
+.books-list a:hover {
+  background-color: #b71c1c;
+}
+
+#pdf-view header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+#pdf-view header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  flex: 1;
+}
+
+#back-btn {
+  background: #666;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pdf-container {
+  margin: 20px 0;
+}
+
+.download-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #1976d2;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+footer {
+  margin-top: 60px;
+  color: #999;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="مكتبة كتب المدح" />
+  <title>كتب المدح</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="images/icon-192.png" />
+  <meta name="theme-color" content="#d32f2f" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="container" id="home-view">
+    <header>
+      <h1>كتب المدح</h1>
+      <p>اللهم صل وسلم وبارك على سيدنا وحبيبنا محمد وآله وصحبه وسلم تسليما كثيرا</p>
+    </header>
+
+    <main>
+      <ul class="books-list">
+        <li><a href="#" data-pdf="b1.pdf">البردة (بردة المختار)</a></li>
+        <li><a href="#" data-pdf="b2.pdf">ديوان الوسائل المتقبلة</a></li>
+        <li><a href="#" data-pdf="b3.pdf">الهمزية</a></li>
+        <li><a href="#" data-pdf="b4.pdf">مجموع القصائد والأدعية</a></li>
+        <li><a href="#" data-pdf="b5.pdf">البرزنجي</a></li>
+      </ul>
+    </main>
+
+    <footer>
+      <p>© 2025 كتب المدح - جميع الحقوق محفوظة</p>
+    </footer>
+  </div>
+
+  <!-- عرض الكتاب -->
+  <div class="container" id="pdf-view" style="display: none;">
+    <header>
+      <button id="back-btn">← العودة</button>
+      <h2 id="book-title"></h2>
+    </header>
+    <main>
+      <div class="pdf-container">
+        <iframe id="pdf-frame" src="" width="100%" height="600"></iframe>
+      </div>
+      <p><a id="download-link" download>📥 تحميل الكتاب (PDF)</a></p>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
