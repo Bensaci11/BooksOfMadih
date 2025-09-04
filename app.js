@@ -40,17 +40,16 @@ backBtn.addEventListener('click', () => {
   pdfFrame.src = '';
 });
 
-// تحميل آخر كتاب تم قراءته عند الدخول
 window.addEventListener('load', () => {
   const lastBook = localStorage.getItem('lastBook');
   if (lastBook && bookTitles[lastBook]) {
-    const link = document.querySelector(`[data-pdf="${lastBook}"]`);
-    if (link) {
-      link.click();
+    const remind = confirm(`هل تريد العودة إلى "${bookTitles[lastBook]}"؟`);
+    if (remind) {
+      const link = document.querySelector(`[data-pdf="${lastBook}"]`);
+      if (link) link.click();
     }
   }
 });
-
 // تسجيل Service Worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
