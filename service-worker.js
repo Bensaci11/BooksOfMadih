@@ -1,6 +1,5 @@
-const CACHE_NAME = 'books-of-madih-v11'; // رقم جديد
+const CACHE_NAME = 'books-of-madih-v12'; // رقم جديد
 const urlsToCache = [
-  '/',
   '/BooksOfMadih/',
   '/BooksOfMadih/index.html',
   '/BooksOfMadih/app.js',
