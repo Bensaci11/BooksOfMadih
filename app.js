@@ -25,40 +25,37 @@ document.querySelectorAll('[data-pdf]').forEach(link => {
     pdfFrame.src = `pdf/${pdf}`;
     downloadLink.href = `pdf/${pdf}`;
 
+    // حفظ آخر كتاب تم فتحه
+    localStorage.setItem('lastBook', pdf);
+
+    // التبديل للعرض
     homeView.style.display = 'none';
     pdfView.style.display = 'block';
-
-    // حفظ آخر قراءة
-    localStorage.setItem('lastBook', pdf);
   });
 });
 
-// الرجوع
+// الرجوع إلى القائمة
 backBtn.addEventListener('click', () => {
   pdfView.style.display = 'none';
   homeView.style.display = 'block';
-  pdfFrame.src = '';
+  pdfFrame.src = ''; // إفراغ الـiframe
 });
 
-window.addEventListener('load', () => {
-  const lastBook = localStorage.getItem('lastBook');
-  if (lastBook && bookTitles[lastBook]) {
-    const remind = confirm(`هل تريد العودة إلى "${bookTitles[lastBook]}"؟`);
-    if (remind) {
-      const link = document.querySelector(`[data-pdf="${lastBook}"]`);
-      if (link) link.click();
-    }
-  }
-});
+// ✅ لا تفعل شيئًا عند التحميل — ابدأ دائمًا من القائمة
+// تم إزالة نافذة confirm تمامًا
+// لن يُفتح آخر كتاب تلقائيًا
+
 // تسجيل Service Worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/BooksOfMadih/service-worker.js', {
       scope: '/BooksOfMadih/'
-    }).then(reg => {
+    })
+    .then(reg => {
       console.log('✅ SW مسجل:', reg.scope);
-    }).catch(err => {
-      console.log('❌ خطأ:', err);
+    })
+    .catch(err => {
+      console.log('❌ خطأ في التسجيل:', err);
     });
   });
 }
