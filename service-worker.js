@@ -1,4 +1,4 @@
-const CACHE_NAME = 'books-of-madih-v9';
+const CACHE_NAME = 'books-of-madih-v11'; // رقم جديد
 const urlsToCache = [
   '/',
   '/BooksOfMadih/',
