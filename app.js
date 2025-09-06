@@ -7,7 +7,7 @@ const backBtn = document.getElementById('back-btn');
 
 // عناوين الكتب
 const bookTitles = {
-  'b1.pdf': 'البردة (بردة المختار)',
+  'b1.pdf': 'البردة ',
   'b2.pdf': 'ديوان الوسائل المتقبلة',
   'b3.pdf': 'الهمزية',
   'b4.pdf': 'مجموع القصائد والأدعية',
