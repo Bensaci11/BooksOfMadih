@@ -1,10 +1,3 @@
-const homeView = document.getElementById('home-view');
-const pdfView = document.getElementById('pdf-view');
-const pdfFrame = document.getElementById('pdf-frame');
-const bookTitle = document.getElementById('book-title');
-const downloadLink = document.getElementById('download-link');
-const backBtn = document.getElementById('back-btn');
-
 // عناوين الكتب
 const bookTitles = {
   'b1.pdf': 'البردة ',
@@ -14,7 +7,15 @@ const bookTitles = {
   'b5.pdf': 'البرزنجي'
 };
 
-// فتح الكتاب
+// عرض الكتب
+const homeView = document.getElementById('home-view');
+const pdfView = document.getElementById('pdf-view');
+const pdfFrame = document.getElementById('pdf-frame');
+const bookTitle = document.getElementById('book-title');
+const downloadLink = document.getElementById('download-link');
+const backBtn = document.getElementById('back-btn');
+
+// فتح الكتاب مباشرة عند الضغط
 document.querySelectorAll('[data-pdf]').forEach(link => {
   link.addEventListener('click', function (e) {
     e.preventDefault();
@@ -25,19 +26,20 @@ document.querySelectorAll('[data-pdf]').forEach(link => {
     pdfFrame.src = `pdf/${pdf}`;
     downloadLink.href = `pdf/${pdf}`;
 
+    // حفظ آخر كتاب
+    localStorage.setItem('lastBook', pdf);
+
+    // التبديل للعرض
     homeView.style.display = 'none';
     pdfView.style.display = 'block';
-
-    // حفظ آخر كتاب تم قراءته
-    localStorage.setItem('lastBook', pdf);
   });
 });
 
-// الرجوع
+// الرجوع إلى القائمة
 backBtn.addEventListener('click', () => {
   pdfView.style.display = 'none';
   homeView.style.display = 'block';
-  pdfFrame.src = '';
+  pdfFrame.src = ''; // إفراغ الإطار
 });
 
 // ✅ لا تظهر نافذة confirm — البدء دائمًا من القائمة
